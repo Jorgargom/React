@@ -20,7 +20,7 @@ class Formulario extends Component {
 
     // obtener los datos
 
-        console.log(this.marcaRef.current.value);
+        //console.log(this.marcaRef.current.value);
 
     // Crear el objeto
 
@@ -30,10 +30,16 @@ class Formulario extends Component {
         plan: plan
     }
 
-    console.log(infoAuto);
+    //console.log(infoAuto);
 
     // Enviarlo al componente principal
-        console.log('Enviado');
+
+    this.props.cotizarSeguro(infoAuto);
+
+    // resetear el formulario opcional
+
+    //e.currentTarget.reset();
+    
 
     }
     
