@@ -10,7 +10,26 @@ class AgregarCita extends Component {
 
     crearNuevaCita = (e) => {
         e.preventDefault();
-        console.log("nueva cita")
+
+    // Crear el objeto
+        const nuevaCita = {
+            mascota: this.nombreMascotaRef.current.value,
+            propietario: this.propietarioRef.current.value,
+            fecha: this.fechaRef.current.value,
+            hora: this.horaRef.current.value,
+            sintomas: this.sintomasRef.current.value
+
+           
+        }
+
+    // Enviarlo a props
+        this.props.crearCita(nuevaCita);
+    // resetear el objeto
+
+        e.currentTarget.reset();
+
+
+
     }
     render() {
         return(
@@ -46,7 +65,7 @@ class AgregarCita extends Component {
                         <div className="form-group row">
                             <label className="col-sm-4 col-lg-2 col-form-label">Sintomas</label>
                             <div className="col-sm-8 col-lg-10">
-                                <textarea  className="form-control"></textarea>
+                                <textarea  ref={this.sintomasRef} className="form-control"></textarea>
                             </div>
                         </div>
                         <div className="form-group row justify-content-end">
