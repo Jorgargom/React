@@ -20,6 +20,10 @@ class App extends Component {
       this.setState({citas})
   }
 
+  borrarCita = id => {
+    console.log('Eliminando..' + id);
+  }
+
   render() {
     return (
       <div className="container">
@@ -32,12 +36,14 @@ class App extends Component {
           <div className="col-md-6">
             <AgregarCita 
               crearCita={this.crearCita}
+              
             />
           </div>
           <div className="col-md-6">
 
           <ListaCitas
             citas={this.state.citas}
+            borrarCita={this.borrarCita}
           />
           
           </div>
