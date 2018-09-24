@@ -21,7 +21,13 @@ class App extends Component {
   }
 
   borrarCita = id => {
-    console.log('Eliminando..' + id);
+    // leer el state
+      const citas = {...this.state.citas}
+    // borrarlo del state
+      delete citas[id];
+    // actualizar el state
+      this.setState({citas})
+
   }
 
   render() {
