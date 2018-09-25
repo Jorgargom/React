@@ -9,29 +9,29 @@ nav .brand-logo {
   position: relative;
 }
 .input-field label {
-  color: white;
+  color: black;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-  color: white;
+  color: black;
 } 
 
 .input-field input[type=text]:focus {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid black;
   box-shadow: 0 1px 0 0 #000;
 }
 
 input[type=text]:not(.browser-default) {
-  border-bottom: 1px solid white;
-  color: white;
+  border-bottom: 1px solid black;
+  color: black;
 }
 input[type=text]:not(.browser-default):focus:not([readonly]) {
-  border-bottom: 1px solid white;
-  -webkit-box-shadow: 0 1px 0 0 white;
-  box-shadow: 0 1px 0 0 white;
+  border-bottom: 1px solid black;
+  -webkit-box-shadow: 0 1px 0 0 black;
+  box-shadow: 0 1px 0 0 black;
 }
 input[type=text]:not(.browser-default):focus:not([readonly]) + label {
-  color: white;
+  color: black;
 }
 
 .contenedor-form {
