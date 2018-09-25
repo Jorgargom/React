@@ -4,13 +4,36 @@ import Formulario from './componentes/Formulario';
 
 
 class App extends Component {
+
+  state = {
+    error: ''
+  }
+
+  componentDidMount(){
+    this.setState({
+      error: false
+    })
+  }
+
+  datosConsulta = respuesta => {
+    if(respuesta.ciudad === '' || respuesta.pais === '') {
+      this.setState({
+        error: true
+      })
+  } else {
+      console.log('todo correcto')
+  }
+}
+
   render() {
     return (
       <div className="app">
         <Header
           titulo = 'Clima React'
         /> 
-        <Formulario />
+        <Formulario 
+          datosConsulta= {this.datosConsulta}
+        />
       </div>
     );
   }

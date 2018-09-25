@@ -14,11 +14,12 @@ class Formulario extends Component {
 
     const respuesta = {
         ciudad: this.ciudadRef.current.value,
-        pais: this.this.paisRef.current.value
+        pais: this.paisRef.current.value
     }
 
     // Enviar los props
 
+    this.props.datosConsulta(respuesta);
 
 
     // opcional resetear el form
