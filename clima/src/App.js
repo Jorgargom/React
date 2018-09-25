@@ -8,7 +8,8 @@ class App extends Component {
 
   state = {
     error: '', 
-    consulta: {}
+    consulta: {},
+    resultado: {}
   }
 
   componentDidUpdate(){
@@ -34,9 +35,19 @@ class App extends Component {
     
     // query con fetch api
 
+    fetch(url)
+      .then(respuesta => {
+        return respuesta.json();
 
-
-
+      })
+      .then(datos => {
+        this.setState({
+          resultado : datos
+        });
+      })
+      .catch(error=> {
+        console.log(error);
+        })
   }
 
   datosConsulta = respuesta => {
