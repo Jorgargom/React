@@ -10,11 +10,12 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.consultarNoticas();
+    this.consultarNoticias();
   }
   
-  consultarNoticas = () => {
-    let url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7b9f01b6bd484ac78484e6b1f1368799';
+  consultarNoticias = (categoria = 'general') => {
+    
+    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${categoria}&apiKey=7b9f01b6bd484ac78484e6b1f1368799`;
   
     fetch(url)
     .then(respuesta => {
@@ -36,7 +37,7 @@ class App extends Component {
         />
         <div className="container white contenedor-noticias">
           <Formulario
-          
+            consultarNoticias = {this.consultarNoticias}
           />
           <Noticias 
               noticias = {this.state.noticias}
