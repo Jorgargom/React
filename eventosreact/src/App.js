@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './componentes/Header';
 import Formulario from './componentes/Formulario';
+import Eventos from './componentes/Eventos';
 
 class App extends Component {
 
@@ -57,6 +58,9 @@ class App extends Component {
               <Formulario
                 categorias={this.state.categorias}
                 obtenerEventos={this.obtenerEventos}
+              />
+              <Eventos
+                eventos={this.state.eventos}
               />
 
           </div>
