@@ -43,7 +43,7 @@ class Formulario extends Component {
                         Busca tu evento por nombre o categoría
                     </legend>
 
-                    <div className="uk-column-1-3@m uk margin">
+                    <div className="uk-column-1-3@m uk-margin">
                         <div className="uk-margin" uk-margin="true">
                             <input ref={this.nombreEventoRef} className="uk-input" type="text" placeholder="Nombre de Evento o Ciudad"/>
                         </div>
