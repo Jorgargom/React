@@ -13,7 +13,6 @@ class Formulario extends Component {
                         <option value="USD">Dolar Estadounidense</option>
                         <option value="MXN">Peso Mexicano</option>
                         <option value="GBP">Libras</option>
-                        
                     </select>
                 </div>
                 <div className="form-group">
