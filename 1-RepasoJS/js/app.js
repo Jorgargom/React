@@ -166,8 +166,64 @@ console.log(cosas2.mostrarInformacionCosas());
 // Destructuring de objetos
 
 const aprendiendoJavascript = {
-    version: 'ES6+',
+    version: {
+        nueva: 'ES6+',
+        antigua: 'ES5'
+},
     frameworks: ['React', 'VueJS', 'AngularJS']
 }
 
 console.log(aprendiendoJavascript);
+
+// Destructuring es extraer valores de un objeto
+let {nueva} = aprendiendoJavascript.version;
+console.log(nueva);
+
+
+//Object literal enhancement
+
+const band = "ACDC";
+const genero = 'Rock';
+const canciones = ['cancion1', 'Cancion2', 'Cancion3'];
+
+const ACDC = {band,genero,canciones};
+
+console.log(ACDC);
+
+// Métodos o funciones
+
+const person = {
+    nombre: 'Jorge',
+    trabajo: 'Web developer',
+    edad: '38',
+    musicaRock: true,
+    mostrarInformacion () {
+        console.log(`${this.nombre} es ${this.trabajo} y su edad es ${this.edad}`)
+    }
+}
+
+person.mostrarInformacion();
+
+
+// Areglos y .map
+
+const carrito = ['Producto 1', 'Producto 2', 'Producto 3'];
+
+const appContenedor = document.querySelector('#app');
+
+let html5='';
+carrito.forEach(producto => {
+    html5 += `<li>${producto}</li>`;
+});
+
+appContenedor.innerHTML = html5;
+
+// .map
+
+carro = ['Producto 1', 'Producto 2', 'Producto 3'];
+
+carro.map(producto => {
+    return 'El producto es ' + producto;
+});
+
+console.log(Object.keys(person));
