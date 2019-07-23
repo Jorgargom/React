@@ -227,3 +227,64 @@ carro.map(producto => {
 });
 
 console.log(Object.keys(person));
+
+
+// Sprear operator
+
+let lenguajes = ['Javascript', 'PHP', 'Python'];
+let frameworks = ['Angular', 'Laravel', 'Django'];
+
+// unir los arreglos en 1 solo
+
+let combinacion = [...lenguajes,...frameworks];
+
+console.log(combinacion);
+
+let [ultimo] = [...lenguajes].reverse();
+
+console.log(ultimo);
+
+function suma(a,b,c) {
+    console.log(a+b+c);
+}
+
+const numeros = [1,2,3];
+
+suma(...numeros);
+
+
+// Metodos en arreglos
+
+const personajes = [
+    {nombre: 'Jorge', edad: 38, aprendiendo: 'Javascript'},
+    {nombre: 'Patri', edad: 28, aprendiendo: 'PHP'},
+    {nombre: 'Lucas', edad: 28, aprendiendo: 'Java'},
+    {nombre: 'Maria', edad: 24, aprendiendo: 'Python'},
+    {nombre: 'Julia', edad: 36, aprendiendo: 'ReactJS'},
+];
+
+console.log(personajes);
+
+// Mayores de 30 años
+
+const mayores = personajes.filter(personaje => {
+    return personaje.edad > 30;
+})
+
+console.log(mayores);
+
+// Que aprende Patri y su edad
+
+const patri = personajes.find( persona => {
+    return persona.nombre === 'Patri';
+});
+
+console.log('Patri está aprendiendo: ' + patri.aprendiendo + ' a la edad de ' + patri.edad + ' años');
+
+let total = personajes.reduce((edadTotal, persona) => {
+    return edadTotal + persona.edad;
+}, 0);
+
+console.log(total / 5);
+
+
