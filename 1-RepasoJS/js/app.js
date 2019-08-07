@@ -287,4 +287,105 @@ let total = personajes.reduce((edadTotal, persona) => {
 
 console.log(total / 5);
 
+// Promises
 
+const aplicarDescuento = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let descuento = true;
+        if (descuento) {
+            resolve('Descuento aplicado!');
+        } else {
+            reject('No se pudo aplicar el descuento');
+        }
+    }, 3000);
+});
+
+aplicarDescuento.then(resultado => {
+    console.log(resultado);
+});
+
+// Promise con ajax
+
+const descargarUsuarios = cantidad => new Promise((resolve, reject) => {
+    //pasar la cantidad a la api
+    const api = `https://randomuser.me/api/`;
+    // llamado a ajax
+    const xhr = new XMLHttpRequest();
+    // abrimos la conexion
+    xhr.open('GET', api, true);
+    xhr.onload = () => {
+        if(xhr.status === 200) {
+            resolve(JSON.parse(xhr.responseText).results);
+        } else {
+            reject(Error(xhr.statusText));
+        }
+    }
+    // opcional (on error)
+    /* xhr.oneror = (error) => reject(error); */
+    // send
+    xhr.send()
+});
+
+descargarUsuarios(10)
+    .then(
+        miembros => imprimirHTML(miembros),
+       /*  error = console.error(
+            new Error('Hubo un error' + error)
+        )  */
+         
+    )
+
+function imprimirHTML(usuarios) {
+    let html = '';
+    usuarios.forEach(usuario => {
+       html5 += `
+        <li>
+            Nombre: ${usuario.name.first} ${usuario.name.last}
+            País: ${usuario.nat}
+            Imagen:
+                <img src="${usuario.picture.medium}">
+        </li>
+       `;
+        
+    });
+}
+
+const contenedoresApp = document.querySelector('#app1');
+contenedoresApp.innerHTML = html5;
+
+// Escribir clases
+
+class Tareas {
+    constructor(nombre, prioridad) {
+        this.nombre = nombre;
+        this.prioridad = prioridad;
+    }
+    mostrar () {
+        console.log(`${this.nombre} tiene una prioridad de ${this.prioridad}`);
+        
+    }
+}
+
+
+class ComprasPendientes extends Tareas {
+    constructor (nombre, prioridad, cantidad) {
+        super(nombre, prioridad);
+        this.cantidad = cantidad;
+    }
+}
+// crear los objetos
+
+let tareas1 = new Tareas ('Aprender Javascript', 'Alta');
+let tareas2 = new Tareas ('ser un master Javascript', 'Alta');
+let tareas3 = new Tareas ('repasar Javascript', 'Media');
+let tareas4 = new Tareas ('Ninja Javascript', 'Baja');
+
+console.log(tareas1.mostrar());
+console.log(tareas2.mostrar());
+console.log(tareas3.mostrar());
+console.log(tareas4.mostrar());
+
+
+let compra1 = new ComprasPendientes ('Jabon', 'Urgente', ' 2');
+
+console.log(compra1.mostrar());
