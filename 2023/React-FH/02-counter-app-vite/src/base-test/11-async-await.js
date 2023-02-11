@@ -21,8 +21,7 @@ const getImagen = async() => {
         // manejo del error
         console.error(error)
     }
-    
-    
+        
     
 }
 
