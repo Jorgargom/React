@@ -1,6 +1,6 @@
-import { getHeroeById } from './bases/08-imp-exp'
+import { getHeroeById } from '../base-test/08-imp-exp'
 
-const getHeroeByIdAsync = ( id ) => {
+export const getHeroeByIdAsync = ( id ) => {
 
     return new Promise( (resolve, reject) => {
 
@@ -11,7 +11,7 @@ const getHeroeByIdAsync = ( id ) => {
             } else {
                 reject( 'No se pudo encontrar el héroe' );
             }
-        }, 2000 )
+        }, 1000 )
     
     });
 
